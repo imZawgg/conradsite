@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@cphotos_g</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css" />
+    <style>
+        .gradient {
+            background: linear-gradient(135deg, #fbbf24, #4338ca, #fbbf24, #4338ca);
+            background-size: 300% 300%;
+            animation-name: move-gradient;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            }
+        @keyframes move-gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        
+        @media (min-width: 640px) {
+            #mobile-menu {
+                display: none!important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="flex h-screen w-full flex-col justify-between overflow-hidden bg-neutral-950 text-white">
+    <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-green-500 text-2xl h-12 w-12 hover:bg-white/15 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="menuButton" onclick="toggleMenu()">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                Icon when menu is closed.
+
+                Menu open: "hidden", Menu closed: "block"
+                -->
+               <i class="fa-solid fa-sharp fa-bars" id="menuIcon"></i>
+            </button>
+            </div>
+            <div class="flex flex-1 items-center justify-between sm:items-stretch px-4">
+            <div class="flex flex-shrink-0 items-center">
+                <a href="https://www.instagram.com/cphotos_g/" class="group flex w-48 items-end text-3xl font-black text-green-500"><i class="fa-brands fa-instagram mr-2"></i><span class="group-hover:underline">cphotos_g</span><i class="fa-sharp fa-solid fa-arrow-up-right ml-1 text-[20px] leading-none transition-all ease-in-out group-hover:text-[24px]"></i></a>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/15 hover:text-white" -->
+                <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/15 hover:text-white">About Me</a>
+                <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/15 hover:text-white">Contact</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div style="display: none;" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/15 hover:text-white" -->
+            <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/15 hover:text-white">About Me</a>
+            <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/15 hover:text-white">Contact</a>
+        </div>
+        </div>
+    </nav>
+    <div class="h-full w-full">
+        <div class="grid h-full w-full grid-cols-2 grid-rows-6 gap-6 p-4 md:grid-cols-3 md:grid-rows-4 lg:grid-cols-4 lg:grid-rows-3">
+        <div class="row-span-3 rounded-3xl border border-white/20 bg-white/5 bg-[url(/3.jpg)] bg-cover bg-center shadow-lg shadow-green-400/10 md:row-span-2"></div>
+        <div class="rounded-3xl border border-white/20 bg-[url(/1.jpg)] bg-cover bg-center shadow-lg shadow-green-400/10 md:col-span-2"></div>
+        <div class="row-span-2 px-2 flex items-center justify-center rounded-3xl border border-white/20 bg-white/5 shadow-lg shadow-green-400/10 md:row-span-1">
+            <div class="flex flex-col items-center justify-center gap-2">
+            <div class="flex flex-wrap items-center justify-center gap-x-2">
+                <p class="text-[4rem] font-extrabold leading-none text-amber-400 drop-shadow-[0_0_25px_rgb(251,191,36,0.75)]">$2</p>
+                <div class="mt-2 flex flex-col text-2xl font-semibold">
+                <p class="leading-none">FOR <span class="font-black text-indigo-500">5</span></p>
+                <p class="leading-none">PHOTOS</p>
+                </div>
+            </div>
+            <div class="gradient mb-5 h-[4rem] w-[7rem] rounded-2xl text-base font-bold shadow-xl shadow-green-400/10 hover:bg-indigo-700 hover:text-lg active:scale-90 sm:w-[9rem]">
+                <button class="h-full w-full rounded-2xl leading-none backdrop-blur-3xl transition-all duration-300 ease-in-out hover:backdrop-brightness-125">GET PHOTOS TAKEN <i class="fa-sharp fa-solid fa-arrow-up-right"></i></button>
+            </div>
+            </div>
+        </div>
+        <div class="row-span-3 rounded-3xl border border-white/20 bg-white/5 bg-[url(/4.jpg)] bg-cover bg-center shadow-lg shadow-green-400/10 md:row-span-2"></div>
+        <div class="rounded-3xl border border-white/20 bg-white/5 bg-[url(/2.jpg)] bg-cover bg-center shadow-lg shadow-green-400/10 md:col-span-2 md:row-span-2"></div>
+        <div class="row-span-2 rounded-3xl border border-white/20 bg-white/5 bg-[url(/5.jpg)] bg-cover bg-center shadow-lg shadow-green-400/10 md:row-span-1"></div>
+        </div>
+    </div>
+    <div></div>
+    </main>
+
+    <script>
+        var menuButton = document.getElementById("menuButton");
+        var menuIcon = document.getElementById("menuIcon");
+        var mobileMenu = document.getElementById("mobile-menu");
+    
+        function toggleMenu() {
+            if (mobileMenu.style.display == "none") {
+                mobileMenu.style.display = "block";
+                menuIcon.classList = "fa-solid fa-sharp fa-xmark";
+            } else {
+                mobileMenu.style.display = "none";
+                menuIcon.classList = "fa-solid fa-sharp fa-bars";
+            }
+        }
+        
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
